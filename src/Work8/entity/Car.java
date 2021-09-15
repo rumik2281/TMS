@@ -46,13 +46,17 @@ public class Car {
         this.price = price;
     }
 
-    public void start() throws EngineStartException {
-        RandomNumberGenerator gen = new RandomNumberGenerator();
-        int number = gen.generate();
+    public void checkEngineNumber(int number) throws EngineStartException {
         if (isEven(number)) {
             throw new EngineStartException("Автомобиль не завёлся");
         } else {
             printer.printMessage("Автомобиль с маркой " + this.name + " завёлся");
         }
+    }
+
+    public void start() throws EngineStartException {
+        RandomNumberGenerator gen = new RandomNumberGenerator();
+        int number = gen.generate();
+        checkEngineNumber(number);
     }
 }
