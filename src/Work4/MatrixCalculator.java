@@ -6,8 +6,11 @@ public class MatrixCalculator {
 
     private final int[][] arr = new int[5][5];
 
+    public int[][] getMatrix() {
+        return arr;
+    }
 
-    private void fillMatrix() {
+    public void fillMatrix() {
         Random random = new Random();
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
@@ -17,7 +20,6 @@ public class MatrixCalculator {
     }
 
     public void printMatrix() {
-        fillMatrix();
         for (int[] ints : arr) {
             for (int j = 0; j < arr.length; j++) {
                 System.out.printf("%d ", ints[j]);
